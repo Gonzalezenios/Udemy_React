@@ -1,23 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import HolaMundo from './components/HolaMundo';
+import Saludar from './components/Saludar';
+
 
 function App() {
+
+const user = {
+  name: "Enio",
+  age: "31",
+  color: "Azul"
+};
+
+const saludarFn = (name, age) => {
+  alert(`Hola, ${user.name} tiene ${user.age} años y su color favorito es el ${user.color}`)
+}
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>React Boostrap  </h1>
+       <HolaMundo />
+       <Saludar userInfo={user} saludarFn={saludarFn} />
       </header>
     </div>
   );
